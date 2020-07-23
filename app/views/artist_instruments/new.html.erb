@@ -1,0 +1,13 @@
+<h2>Update Artist's Instruments</h2>
+<%=form_for @artist_instrument do |f| %>
+
+    <%= f.label :artist_name %>:
+    <%= f.collection_select :artist_id, Artist.all, :id, :name %><br>
+
+    <%= f.label :instrument %>:
+    <%= f.collection_select :instrument_id, Instrument.all, :id, :name %><br>
+
+    <br><%= f.submit "Add to Artist's Instruments" %>
+<% end %>
+
+<%= button_to "Back to All Artists", artists_path, method: :get %>

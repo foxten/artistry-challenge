@@ -1,0 +1,10 @@
+<h2>All Artists</h2>
+
+<% @artists.each do |artist| %>
+    <li><%= link_to artist.name, artist_path(artist) %></li>
+<% end %>
+
+<br><%= button_to "Add an Artist", new_artist_path, method: :get %>
+<br><%= button_to "Add to Artist's Instruments", new_artist_instrument_path, method: :get %>
+
+<be><%= button_to "View All Instruments", instruments_path, method: :get %>

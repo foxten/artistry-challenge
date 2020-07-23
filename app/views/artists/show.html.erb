@@ -1,0 +1,11 @@
+<h2>Artist Information</h2>
+
+Name: <%= @artist.name %><br>
+Age: <%= @artist.age %><br>
+Title: <%= @artist.title %><br>
+My Instruments: <% @artist.my_instruments.each do |instrument| %>
+    <%= instrument.name %><br>
+<% end %>
+
+<br><%= button_to "Add an Instrument", new_artist_instrument_path, method: :get %>
+<br><%= button_to "Back to All Artists", artists_path, method: :get %>

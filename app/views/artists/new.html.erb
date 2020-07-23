@@ -1,0 +1,24 @@
+<h2>New Artist</h2>
+<%=form_for @artist do |f| %>
+    <% if @artist.errors.any? %>
+        <div id ="errors">
+            <h3>The following <%= pluralize(@artist.errors.count, "error") %> need(s) to be corrected:</h3>
+                <% @artist.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+            <% end %>
+        </div>
+    <% end %>
+
+    <%= f.label :name %>:
+    <%= f.text_field :name %><br>
+
+    <%= f.label :title %>:
+    <%= f.text_field :title %><br>
+
+    <%= f.label :age %>:
+    <%= f.text_field :age %><br>
+
+    <br><%= f.submit %>
+<% end %>
+
+<%= button_to "Back to All Artists", artists_path, method: :get %>

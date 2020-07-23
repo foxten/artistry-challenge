@@ -1,0 +1,19 @@
+<h2>All Instruments</h2>
+
+<table style= "width:75%" border=1 frame=sides>
+    <tr>
+        <th>Instrument</th>
+        <th>Classification</th>
+    </tr>
+    <tbody>
+        <% @instruments.each do |instrument| %>
+    <tr>
+        <td><%= instrument.name %></td>
+        <td><%= instrument.classification %></td>
+    </tr>
+        <% end %>
+    </tbody>
+</table><br>
+
+<%= button_to "View Artists", artists_path, method: :get %>
+<br><%= button_to "Add to Artist's Instruments", new_artist_instrument_path, method: :get %>
